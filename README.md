@@ -11,7 +11,7 @@ I used a MacBook and the Arduino IDE to program directly the ESP8266-01 module.
 - USB to Serial adapter with the FT232RL (FTDI) chip
 - 3.3V power supply
 - Breadboard and some jumper wires
-- 2 10KΩ resistors
+- 2x10KΩ resistors
 
 *I also tried to use a Serial adapter with CH340 chip but it didn't work for me.*
 
@@ -29,7 +29,7 @@ GPIO0     -> *
 GPIO2     -> NC
 GND       -> GND  (power supply)
 ```
-*The GPIO0 needs to be connected to GND when you're uploading something to the board and NC when you want to run normally
+*The [GPIO0](https://github.com/espressif/esptool/wiki/ESP8266-Boot-Mode-Selection) needs to be connected to GND to enter boot mode and NC to run regularly.
 
 NC = Not Connected
 
@@ -43,11 +43,16 @@ RXD       -> TX   (ESP8266)
 RTS       -> NC
 CTS       -> NC
 ```
-!!!It's important to have a common GND, so connect both GNDs to the power supply.
+It's important to have a common GND, so connect both GNDs to the power supply.
 
 ## Software
 
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Esptool](https://github.com/espressif/esptool)
 
+#### Setup Arduino IDE
+
+You'll have to install the esp8266 board package, go to 
 
 ## Serial Communication
 
