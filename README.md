@@ -35,7 +35,7 @@ CTS       -> NC
 ```
 NC = Not Connected
 
-##### It's important to have a common GND, so connect both GNDs to the power supply.
+!!!It's important to have a common GND, so connect both GNDs to the power supply.
 
 ### Serial Communication
 
