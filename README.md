@@ -52,7 +52,12 @@ It's important to have a common GND, so connect both GNDs to the power supply.
 
 #### Setup Arduino IDE
 
-You'll have to install the esp8266 board package: go to Boards, Board Manager and search for esp8266 and download the latest version.
+You'll have to install the esp8266 board package: go to Tools -> Board -> Board Manager, search for "esp8266" and download the latest version.
+After installing that you'll have to select the "Genereic ESP8266 Module" from Tools -> Board -> "ESP8266 Boards (version)".
+
+#### Setup Esptool
+
+
 
 ## Serial Communication
 
