@@ -62,3 +62,12 @@ After installing that you'll have to select the "Genereic ESP8266 Module" from T
 ## Serial Communication
 
 To communicate with the ESP8266 you have to connect the FTDI adapter to your pc and from the Arduino IDE select open the right port Serial Monitor. The default baud of the ESP8266 is 115200, so you have to select *115200 baud* and *Both (NL and CR)*
+
+Erase_flash
+Flash firmware
+Serial monitor 115200 baud
+baud from 115200 to 9600: AT+UART_DEF=9600,8,1,0,0
+Serial monitor 9600 baud
+Flash Arduino program
+Hope...
+
