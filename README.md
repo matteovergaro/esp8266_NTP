@@ -13,7 +13,7 @@ I used a MacBook and the Arduino IDE to program directly the ESP8266-01 module.
 - Breadboard and some jumper wires
 - 2x10KΩ resistors
 
-*I also tried to use a Serial adapter with CH340 chip but it didn't work for me.*
+*I also used a serial adapter with CH340 chip*
 
 #### Connections
 
