@@ -50,18 +50,17 @@ It's important to have a common GND, so connect both GNDs to the power supply.
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Esptool](https://github.com/espressif/esptool)
 
-#### Setup Arduino IDE
+#### Setup Arduino IDE and Esptool
 
-You'll have to install the esp8266 board package: go to Tools -> Board -> Board Manager, search for "esp8266" and download the latest version.
-After installing that you'll have to select the "Genereic ESP8266 Module" from Tools -> Board -> "ESP8266 Boards (version)".
+Install the esp8266 board package: go to Tools -> Board -> Board Manager, search for "esp8266" and download the latest version.
+After installing that, select the "Genereic ESP8266 Module" from Tools -> Board -> "ESP8266 Boards (version)".
 
-#### Setup Esptool
-
+For the esptool just follow the "Easy installation" from the link above, which is the official documentation.
 
 
 ## Serial Communication
 
-To communicate with the ESP8266 you have to connect the FTDI adapter to your pc and from the Arduino IDE select open the right port Serial Monitor. The default baud of the ESP8266 is 115200, so you have to select *115200 baud* and *Both (NL and CR)*
+To communicate with the ESP8266 connect the FTDI adapter to your pc and from the Arduino IDE select the right port in Tools -> Port  Serial Monitor. The default baud of the ESP8266 is 115200, so you have to select *115200 baud* and *Both (NL and CR)*
 
 Erase_flash
 
