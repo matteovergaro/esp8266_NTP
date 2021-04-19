@@ -71,7 +71,10 @@ Flash firmware "esp8266_nonos_sdk_v2.0.0_16_08_10" :
 
 Serial monitor 115200 baud
 
-baud from 115200 to 9600: AT+UART_DEF=9600,8,1,0,0
+baud from 115200 to 9600:
+```
+AT+UART_DEF=9600,8,1,0,0
+```
 
 Serial monitor 9600 baud
 
