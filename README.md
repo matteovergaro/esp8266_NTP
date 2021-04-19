@@ -64,7 +64,10 @@ To communicate with the ESP8266 connect the FTDI adapter to your pc and from the
 
 Erase_flash
 
-Flash firmware
+Flash firmware "esp8266_nonos_sdk_v2.0.0_16_08_10" :
+```
+--port /dev/tty.usbserial... write_flash 0x00000 bin/eagle.flash.bin 0x78000 bin/blank.bin 0x7c000 bin/esp_init_data_default.bin 0x7a000 bin/blank.bin 0x7e000 bin/blank.bin 0x10000 bin/eagle.irom0text.bin -fm dout
+```
 
 Serial monitor 115200 baud
 
