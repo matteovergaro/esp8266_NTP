@@ -56,7 +56,7 @@ Install the Arduino IDE from the link above, then install the esp8266 board pack
 
 For the esptool just follow the "Easy installation" from the link above, which is the official documentation.
 
-Then download the "bin" directory and move it inside the directory "esptool-master".
+Then download the "bin" directory and move it inside the directory "esptool-master", just downloaded with the esptool installation.
 
 
 ## Serial Communication
