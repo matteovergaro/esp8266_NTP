@@ -54,16 +54,22 @@ It's important to have a common GND, so connect both GNDs to the power supply.
 
 Install the Arduino IDE from the link above, then install the esp8266 board package: go to Tools -> Board -> Board Manager, search for "esp8266" and download the latest version. After installing that, select the "Generic ESP8266 Module" from Tools -> Board -> "ESP8266 Boards (version)".
 
-For the esptool just follow the "Easy installation" from the link above, which is the official documentation.
+For the esptool just follow the "Easy installation" from the link above, which is the official documentation. After finishing the installation put inside the directory "esptool-master" the "bin" directory in the 
 
 
 ## Serial Communication
 
 To communicate with the ESP8266 connect the FTDI adapter to your pc and open a terminal window, then connect the GPIO0 to GND and write the following commands:
-```cd <path to directory "esptool-master">```
-```./esptool.py erase_flash```
 
-now the chip can be flashed, :
+```
+cd <path to directory "esptool-master">
+```
+
+```
+./esptool.py erase_flash
+```
+
+now :
 
 
 and from the Arduino IDE select the right port in Tools -> Port  Serial Monitor. The default baud of the ESP8266 is 115200, so you have to select *115200 baud* and *Both (NL and CR)*.
