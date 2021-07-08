@@ -1,7 +1,7 @@
 # Esp8266_NTP
 
 This is my ESP8266 project to retrieve date and time from an NTP server.
-I used a MacBook and the Arduino IDE to program directly the ESP8266-01 module.
+I worked on Mac OS and i used the Arduino IDE to program directly the ESP8266-01 module.
 
 ## Hardware and Connections
 
@@ -52,17 +52,22 @@ It's important to have a common GND, so connect both GNDs to the power supply.
 
 #### Setup Arduino IDE and Esptool
 
-Install the esp8266 board package: go to Tools -> Board -> Board Manager, search for "esp8266" and download the latest version.
-After installing that, select the "Genereic ESP8266 Module" from Tools -> Board -> "ESP8266 Boards (version)".
+Install the Arduino IDE from the link above, then install the esp8266 board package: go to Tools -> Board -> Board Manager, search for "esp8266" and download the latest version. After installing that, select the "Generic ESP8266 Module" from Tools -> Board -> "ESP8266 Boards (version)".
 
 For the esptool just follow the "Easy installation" from the link above, which is the official documentation.
 
 
 ## Serial Communication
 
-To communicate with the ESP8266 connect the FTDI adapter to your pc and from the Arduino IDE select the right port in Tools -> Port  Serial Monitor. The default baud of the ESP8266 is 115200, so you have to select *115200 baud* and *Both (NL and CR)*
+To communicate with the ESP8266 connect the FTDI adapter to your pc and open a terminal window, then connect the GPIO0 to GND and write the following commands:
+```cd <path to directory "esptool-master">```
+```./esptool.py erase_flash```
 
-Erase_flash
+now the chip can be flashed, :
+
+
+and from the Arduino IDE select the right port in Tools -> Port  Serial Monitor. The default baud of the ESP8266 is 115200, so you have to select *115200 baud* and *Both (NL and CR)*.
+
 
 Flash firmware "esp8266_nonos_sdk_v2.0.0_16_08_10" :
 ```
