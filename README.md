@@ -54,40 +54,34 @@ It's important to have a common GND, so connect both GNDs to the power supply.
 
 Install the Arduino IDE from the link above, then install the esp8266 board package: go to Tools -> Board -> Board Manager, search for "esp8266" and download the latest version. After installing that, select the "Generic ESP8266 Module" from Tools -> Board -> "ESP8266 Boards (version)".
 
-For the esptool just follow the "Easy installation" from the link above, which is the official documentation. After finishing the installation put inside the directory "esptool-master" the "bin" directory in the 
+For the esptool just follow the "Easy installation" from the link above, which is the official documentation.
+
+Then download the "bin" directory and move it inside the directory "esptool-master".
 
 
 ## Serial Communication
 
 To communicate with the ESP8266 connect the FTDI adapter to your pc and open a terminal window, then connect the GPIO0 to GND and write the following commands:
-
 ```
 cd <path to directory "esptool-master">
 ```
-
+Erase the flash of the esp8266:
 ```
 ./esptool.py erase_flash
 ```
-
-now :
-
-
-and from the Arduino IDE select the right port in Tools -> Port  Serial Monitor. The default baud of the ESP8266 is 115200, so you have to select *115200 baud* and *Both (NL and CR)*.
-
-
-Flash firmware "esp8266_nonos_sdk_v2.0.0_16_08_10" :
+Flash the new firmware "esp8266_nonos_sdk_v2.0.0_16_08_10", make sure that the "bin" directory is in the right directory:
 ```
---port /dev/tty.usbserial... write_flash 0x00000 bin/eagle.flash.bin 0x78000 bin/blank.bin 0x7c000 bin/esp_init_data_default.bin 0x7a000 bin/blank.bin 0x7e000 bin/blank.bin 0x10000 bin/eagle.irom0text.bin -fm dout
+./esptool.py --port /dev/tty.<usbserial> write_flash 0x00000 bin/eagle.flash.bin 0x78000 bin/blank.bin 0x7c000 bin/esp_init_data_default.bin 0x7a000 bin/blank.bin 0x7e000 bin/blank.bin 0x10000 bin/eagle.irom0text.bin -fm dout
 ```
+to find your \<usbserial\> just double click tab or read it on the Arduino IDE Ports menu.
 
-Serial monitor 115200 baud
+Now from the Arduino IDE select the right port in Tools -> Port. The default baud of the ESP8266 is 115200, so open the serial monitor and select *115200 baud* and *Both (NL and CR)*.
 
-baud from 115200 to 9600:
+The communication between the Arduino nano and the esp8266 can be established only with a baudrate of 9600, so to change the baudrate of the esp from 115200 to 9600 open the serial monitor and write:
 ```
 AT+UART_DEF=9600,8,1,0,0
 ```
-
-Serial monitor 9600 baud
+Now change again the serial monitor baudrate, select *9600 baud* and *Both (NL and CR)*.
 
 Flash Arduino program
 
