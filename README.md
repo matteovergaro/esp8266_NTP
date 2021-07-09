@@ -1,6 +1,6 @@
 # Esp8266_NTP
 
-This is my ESP8266 project to retrieve date and time from an NTP server.
+ESP8266 project to retrieve date and time from an NTP server.
 I worked on Mac OS and i used the Arduino IDE to program directly the ESP8266-01 module.
 
 ## Hardware and Connections
