@@ -75,7 +75,7 @@ Flash the new firmware "esp8266_nonos_sdk_v2.0.0_16_08_10", make sure that the "
 ```
 to find your \<usbserial\> just double click tab or read it on the Arduino IDE Ports menu.
 
-Now from the Arduino IDE select the right port in Tools -> Port. The default baud of the ESP8266 is 115200, so open the serial monitor and select *115200 baud* and *Both (NL and CR)*.
+Now from the Arduino IDE select the right port in Tools -> Port. The default baud of the ESP8266 is 115200 (sometimes 74880), so open the serial monitor and select *115200 baud* and *Both (NL and CR)*.
 
 The communication between the Arduino nano and the esp8266 can be established only with a baudrate of 9600, so to change the baudrate of the esp from 115200 to 9600 in the serial monitor write:
 ```
