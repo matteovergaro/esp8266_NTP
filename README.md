@@ -61,7 +61,12 @@ Then download the "bin" directory and move it inside the directory "esptool-mast
 
 ## Serial Communication
 
-To communicate with the ESP8266 connect the FTDI adapter to your pc and open a terminal window, then connect the GPIO0 to GND and write the following commands:
+To communicate with the ESP8266 connect the FTDI adapter to your pc and from the Arduino IDE select the right port in Tools -> Port. The default baud of the ESP8266 is 115200 (sometimes 74880), so open the serial monitor and select *115200 baud* and *Both (NL and CR)*, type:
+```
+AT
+```
+if the esp responds with "OK" everything is working fine, otherwise check again the connection.
+Now open a terminal window, then connect the GPIO0 to GND and write the following commands:
 ```
 cd <path to directory "esptool-master">
 ```
@@ -69,14 +74,12 @@ Erase the flash of the esp8266:
 ```
 ./esptool.py erase_flash
 ```
-Flash the new firmware "esp8266_nonos_sdk_v2.0.0_16_08_10", make sure that the "bin" directory is in the right directory:
+If a timeout error occurs, pull the RST pin to GND while the esp is on and try again.
+Flash the new firmware "esp8266_nonos_sdk_v2.0.0_16_08_10", make sure that the "bin" directory is in the right path:
 ```
 ./esptool.py --port /dev/tty.<usbserial> write_flash 0x00000 bin/eagle.flash.bin 0x78000 bin/blank.bin 0x7c000 bin/esp_init_data_default.bin 0x7a000 bin/blank.bin 0x7e000 bin/blank.bin 0x10000 bin/eagle.irom0text.bin -fm dout
 ```
 to find your \<usbserial\> just double click tab or read it on the Arduino IDE Ports menu.
-
-Now from the Arduino IDE select the right port in Tools -> Port. The default baud of the ESP8266 is 115200 (sometimes 74880), so open the serial monitor and select *115200 baud* and *Both (NL and CR)*.
-
 The communication between the Arduino nano and the esp8266 can be established only with a baudrate of 9600, so to change the baudrate of the esp from 115200 to 9600 in the serial monitor write:
 ```
 AT
@@ -88,5 +91,4 @@ AT+UART_DEF=9600,8,1,0,0
 Now change again the serial monitor baudrate, select *9600 baud* and *Both (NL and CR)*.
 
 Flash Arduino program
-
 
