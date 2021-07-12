@@ -100,4 +100,4 @@ After it's finished, disconnect the GPIO0 and using the serial monitor check tha
 
 If you change wifi ssid or pwd you'll have to repeat the whole process, because re-uploading the arduino program wont' work. This is a problem related to the esp8266-01 module because it saves the credentials in its memory https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html ("Station" paragraph).
 
-#### Good luck.
+#### Good luck
