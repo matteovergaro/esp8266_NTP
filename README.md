@@ -80,7 +80,7 @@ Flash the new firmware "esp8266_nonos_sdk_v2.0.0_16_08_10", make sure that the "
 ./esptool.py --port /dev/tty.<usbserial> write_flash 0x00000 bin/eagle.flash.bin 0x78000 bin/blank.bin 0x7c000 bin/esp_init_data_default.bin 0x7a000 bin/blank.bin 0x7e000 bin/blank.bin 0x10000 bin/eagle.irom0text.bin -fm dout
 ```
 to find your \<usbserial\> just double click tab or read it on the Arduino IDE Ports menu.
-The communication between the Arduino nano and the esp8266 can be established only with a baudrate of 9600, so to change the baudrate of the esp from 115200 to 9600 in the serial monitor write:
+Now disconnect GPIO0 from GND and leave it NC. The communication between the Arduino nano and the esp8266 can be established only with a baudrate of 9600, so to change the baudrate of the esp from 115200 to 9600 in the serial monitor write:
 ```
 AT
 ```
@@ -89,6 +89,12 @@ if the esp responds with "OK" everything is working fine, otherwise check again 
 AT+UART_DEF=9600,8,1,0,0
 ```
 Now change again the serial monitor baudrate, select *9600 baud* and *Both (NL and CR)*.
-
-Flash Arduino program
-
+Finally reconnect GPIO0 to GND and flash the Arduino program "NTP_esp.ino" using the Arduino IDE. In the Tools menu select:
+```
+Board: Generic esp8266 module
+Upload Speed: 115200
+Flash Mode: DOUT
+```
+And leave the rest as it is, now hit the upload button and wait.
+After it's finished, disconnect the GPIO0 and using the serial monitor check that everything's working fine.
+If you change wifi ssid or pwd you'll have to repeat the whole process, because re-uploading the arduino program wont' work. This is a problem related to the esp8266-01 module.
